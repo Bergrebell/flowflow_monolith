@@ -1,5 +1,5 @@
 # FlowFlow
-Authors: Roman Küpper & Serge Hänni
+Authors: Roman Küpper & Serge Hänni (until 2019)
 
 Github: [https://github.com/Bergrebell/flowflow_monolith-](https://github.com/Bergrebell/flowflow_monolith-)
 
