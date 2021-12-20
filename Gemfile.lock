@@ -94,6 +94,7 @@ GEM
       reline (>= 0.2.7)
     jbuilder (2.11.4)
       activesupport (>= 5.0.0)
+    knnball (0.1.0)
     loofah (2.13.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -162,6 +163,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
+    swissgrid (0.1.1)
     thor (1.1.0)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
@@ -193,6 +195,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  knnball
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.0)
@@ -200,6 +203,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  swissgrid
   turbo-rails
   tzinfo-data
   web-console

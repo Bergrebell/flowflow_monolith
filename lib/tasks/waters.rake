@@ -25,7 +25,7 @@ namespace :waters do
   desc 'imports missing temperatures to lakes'
   task import_temperatures_to_lakes: :environment do
     doc = Nokogiri::HTML(
-      open('http://meteonews.ch/de/Artikel/Lakes/CH/de')
+      URI.open('http://meteonews.ch/de/Artikel/Lakes/CH/de')
     )
     LakeTemperatureImporter.new(doc).call
   end

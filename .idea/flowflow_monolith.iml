@@ -56,6 +56,7 @@
     <orderEntry type="library" scope="PROVIDED" name="io-console (v0.5.9, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.3.7, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.4, rbenv: 3.0.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="knnball (v0.1.0, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.13.0, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.2, rbenv: 3.0.3) [gem]" level="application" />
@@ -86,6 +87,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.0.2, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.4.2, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stimulus-rails (v1.0.2, rbenv: 3.0.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="swissgrid (v0.1.1, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.1.0, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbo-rails (v1.0.0, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.4, rbenv: 3.0.3) [gem]" level="application" />
@@ -338,6 +340,17 @@
               <RakeTaskImpl description="" fullCommand="db:truncate_all" id="truncate_all" />
             </subtasks>
           </RakeTaskImpl>
+          <RakeTaskImpl id="housekeeping">
+            <subtasks>
+              <RakeTaskImpl description="Vacuums the postgres database to free up space" fullCommand="housekeeping:db" id="db" />
+              <RakeTaskImpl description="Export and removes old entries from the database" fullCommand="housekeeping:export" id="export" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="import">
+            <subtasks>
+              <RakeTaskImpl description="imports waters and weather stations and measurements" fullCommand="import:all" id="all" />
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl id="importmap">
             <subtasks>
               <RakeTaskImpl description="Setup Importmap for the app" fullCommand="importmap:install" id="install" />
@@ -444,6 +457,22 @@
                   <RakeTaskImpl description="Switch on Redis and use it in development" fullCommand="turbo:install:redis" id="redis" />
                 </subtasks>
               </RakeTaskImpl>
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="waters">
+            <subtasks>
+              <RakeTaskImpl description="import water stations, measurements and additional lake temperatures" fullCommand="waters:import_all_waters" id="import_all_waters" />
+              <RakeTaskImpl description="imports water stations and measurements" fullCommand="waters:import_stations_and_measurements" id="import_stations_and_measurements" />
+              <RakeTaskImpl description="imports missing temperatures to lakes" fullCommand="waters:import_temperatures_to_lakes" id="import_temperatures_to_lakes" />
+              <RakeTaskImpl description="removes measurements that are older than a week from database" fullCommand="waters:remove_old_measurements" id="remove_old_measurements" />
+              <RakeTaskImpl description="sets most_recent to false on all measurements" fullCommand="waters:set_most_recent_false" id="set_most_recent_false" />
+            </subtasks>
+          </RakeTaskImpl>
+          <RakeTaskImpl id="weather">
+            <subtasks>
+              <RakeTaskImpl description="imports weather stations and measurements" fullCommand="weather:import_stations_and_measurements" id="import_stations_and_measurements" />
+              <RakeTaskImpl description="Imports weather measurements" fullCommand="weather:measurements" id="measurements" />
+              <RakeTaskImpl description="Imports weather stations from file" fullCommand="weather:stations" id="stations" />
             </subtasks>
           </RakeTaskImpl>
           <RakeTaskImpl id="yarn">
