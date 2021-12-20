@@ -1,0 +1,27 @@
+basel:
+  number: "2199"
+  name: "Basel"
+  water_body_name: "Wiese"
+  water_body_type: "river"
+  easting: 611800
+  northing: 269700
+  weather_station: weather_basel
+
+locarno:
+  number: "2022"
+  name: "Locarno"
+  water_body_name: "Lago Maggiore"
+  water_body_type: "lake"
+  easting: 705480
+  northing: 113380
+  weather_station: weather_locarno
+
+st_gallen:
+  number: "2468"
+  name: "St. Gallen
+  Bruggen/Au"
+  water_body_name: "Sitter"
+  water_body_type: "river"
+  easting: 742540
+  northing: 253230
+  weather_station: weather_st_gallen
