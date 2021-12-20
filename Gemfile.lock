@@ -171,6 +171,7 @@ GEM
       railties (>= 6.0.0)
     swissgrid (0.1.1)
     thor (1.1.0)
+    thread_safe (0.3.6)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -213,6 +214,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   swissgrid
+  thread_safe
   turbo-rails
   tzinfo-data
   web-console
