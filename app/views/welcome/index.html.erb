@@ -1,3 +1,13 @@
 <h1>Welcome to FlowFlow</h1>
 <p>I am currently heavily refactoring the application to use Ruby 3.x and Rails 7.x. Stay tuned! :)</p>
-<p>You can find all stations <%= link_to "here", api_stations_path %></p>
+<p>You can find all stations <%= link_to "here", stations_index_path %></p>
+
+<div>
+  <%= image_tag "django.jpg", width: 1024 %>
+</div>
+
+<%= turbo_frame_tag "stations_table", src: stations_index_path do %>
+  <div>
+    Placeholder content
+  </div>
+<% end %>

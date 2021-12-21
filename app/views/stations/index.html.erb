@@ -1,0 +1,17 @@
+<h1>Stations#index</h1>
+<%= link_to "back", root_path %>
+
+<turbo-frame id="stations_table">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Water Body Name</th>
+    </tr>
+    <% @stations.each do |station| %>
+      <tr>
+        <td><%= station.name %></td>
+        <td><%= station.water_body_name %></td>
+      </tr>
+    <% end %>
+  </table>
+</turbo-frame>
