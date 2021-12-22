@@ -17,8 +17,10 @@
         data-controller="form" data-action="invalid->form#hideValidationMessage:capture">
     <label for="search_query">Query</label>
     <input id="search_query" name="query" type="search" pattern=".*\w+.*" required autocomplete="off"
-           data-combobox-target="input" data-action="focus->combobox#start focusout->combobox#stop">
-    <button>
+           data-combobox-target="input" data-action="focus->combobox#start focusout->combobox#stop
+           input->form#submit">
+
+    <button style="display: none" data-form-target="submit">
       Search
     </button>
 
