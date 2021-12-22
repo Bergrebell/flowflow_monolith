@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :searches, only: :index
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   namespace :api do
     resources :stations, only: %i[index show]
     get 'station(/:id)/weather', to: 'stations#weather', as: :station_weather

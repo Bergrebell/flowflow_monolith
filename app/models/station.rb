@@ -17,6 +17,7 @@ class Station < ApplicationRecord
                         :water_body_type
 
   scope :lakes, -> { where(water_body_type: 'lake') }
+  scope :containing, -> (query) { Station.where('name || water_body_name ILIKE ?', "%#{query}%") }
 
   def has_measurements_younger_than_a_day?
     measurements.most_recent
