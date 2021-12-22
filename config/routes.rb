@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'stations/show'
   root 'welcome#index'
   resources :searches, only: :index
+  resources :stations, only: :show
 
   namespace :api do
     resources :stations, only: %i[index show]

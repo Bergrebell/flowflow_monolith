@@ -4,7 +4,7 @@ id="search_results"-->
   <ul>
     <% @stations.each do |station| %>
       <li>
-        <%= "#{station.water_body_name} (#{station.name})" %>
+        <%= link_to "#{station.water_body_name} (#{station.name})", station_path(station) %>
       </li>
     <% end %>
   </ul>
