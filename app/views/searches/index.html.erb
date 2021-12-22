@@ -1,9 +1,15 @@
-<h1>Results</h1>
+<!--this will be shown for both /search and inside the turbo-frame with
+id="search_results"-->
+<turbo-frame id="<%= params.fetch(:turbo_frame, "search_results") %>">
+  <ul>
+    <% @stations.each do |station| %>
+      <li>
+        <%= "#{station.water_body_name} (#{station.name})" %>
+      </li>
+    <% end %>
+  </ul>
+</turbo-frame>
 
-<ul>
-  <% @stations.each do |station| %>
-    <li>
-      <%= station.name %>
-    </li>
-  <% end %>
-</ul>
+<!--this will be ONLY shown at /search-->
+<h1>will this be shown??</h1>
+

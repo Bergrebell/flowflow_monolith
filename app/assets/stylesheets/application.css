@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+turbo-frame {
+    border: solid 1px red;
+}

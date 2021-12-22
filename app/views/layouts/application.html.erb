@@ -12,13 +12,15 @@
 
 <body>
 <header>
-  <form action="<%= searches_path %>">
+  <form action="<%= searches_path(turbo_frame: "foo") %>" data-turbo-frame="search_results">
     <label for="search_query">Query</label>
     <input id="search_query" name="query" type="search">
 
     <button>
       Search
     </button>
+
+    <turbo-frame id="search_results" target="_top"></turbo-frame>
   </form>
 </header>
 <main><%= yield %></main>
