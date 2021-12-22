@@ -1,10 +1,11 @@
 <!--this will be shown for both /search and inside the turbo-frame with
 id="search_results"-->
 <turbo-frame id="<%= params.fetch(:turbo_frame, "search_results") %>">
-  <ul>
+  <ul role="listbox" data-combobox-target="list">
     <% @stations.each do |station| %>
       <li>
-        <%= link_to "#{station.water_body_name} (#{station.name})", station_path(station) %>
+        <%= link_to "#{station.water_body_name} (#{station.name})", station_path(station),
+                    id: dom_id(station, :search_result), role: "option", class: "aria-selected:outline-black" %>
       </li>
     <% end %>
   </ul>

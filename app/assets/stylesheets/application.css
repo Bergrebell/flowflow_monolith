@@ -17,3 +17,5 @@
 turbo-frame {
     border: solid 1px red;
 }
+
+.aria-selected\:outline-black[aria-selected="true"] { outline: 2px dotted black; }
