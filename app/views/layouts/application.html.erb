@@ -12,9 +12,10 @@
 
 <body>
 <header>
-  <form action="<%= searches_path(turbo_frame: "foo") %>" data-turbo-frame="search_results">
+  <form action="<%= searches_path(turbo_frame: "foo") %>" data-turbo-frame="search_results"
+        data-controller="form" data-action="invalid->form#hideValidationMessage:capture">
     <label for="search_query">Query</label>
-    <input id="search_query" name="query" type="search">
+    <input id="search_query" name="query" type="search" pattern=".*\w+.*" required>
 
     <button>
       Search
