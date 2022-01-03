@@ -1,7 +1,7 @@
 # FlowFlow
 Authors: Roman Küpper & Serge Hänni (until 2019)
 
-Github: [https://github.com/Bergrebell/flowflow_monolith-](https://github.com/Bergrebell/flowflow_monolith-)
+Github: [https://github.com/Bergrebell/flowflow_monolith](https://github.com/Bergrebell/flowflow_monolith)
 
 ## Datasources
 APIs:
